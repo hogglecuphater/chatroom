@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #292929;
+}
+
+h1 {
+    color: rgb(208, 208, 208);
+}

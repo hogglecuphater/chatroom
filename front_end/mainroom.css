@@ -1,0 +1,39 @@
+body {
+    background-color: #292929;
+}
+
+h1 {
+    color: rgb(208, 208, 208);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#messageContainer {
+    width: 20%;
+    height: 800px;          /* Fixed height is required for scrolling */
+    border: 1px solid #ccc;
+    background: #1e1e1e;    /* Dark theme style */
+    color: #00ff00;         /* Terminal green */
+    padding: 10px;
+    overflow-y: auto;       /* Adds the scrollbar when content overflows */
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 5px;    /* Space between log entries */
+}
+
+#messageSendForm {
+    margin-top: auto; /* This is the "magic" line that pushes the form to the bottom */
+    padding: 0px;
+    background: #2a2a2a; /* Slightly different color so you can see the input area */
+    width: 100%;
+    flex-shrink: 0;    /* Prevents the form from squishing */
+}
+
+#messages {
+    flex-grow: 1;      /* Takes up all available space */
+    overflow-y: auto;  /* Only this part scrolls */
+}
