@@ -5,8 +5,8 @@ const passwordInput = document.getElementById("passwordInput");
 
 passwordInput.style.display = 'none';
 
-// const apiLocation = 'https://chatroom-api.hogglecuphater.org'
-const apiLocation = 'http://127.0.0.1:8001'
+const apiLocation = 'https://chatroom-api.hogglecuphater.org'
+// const apiLocation = 'http://127.0.0.1:8001'
 
 inputForm.addEventListener('submit', inputFormSubmitHandler);
 async function inputFormSubmitHandler(event) {

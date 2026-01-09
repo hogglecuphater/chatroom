@@ -5,8 +5,8 @@ use axum::{Json, extract::{Path, State}};
 use crate::AppState;
 
 pub struct UserData {
-    name: String,
-    last_ping: std::time::Instant,
+    pub name: String,
+    pub last_ping: std::time::Instant,
 }
 
 pub async fn handle_register(
@@ -15,7 +15,7 @@ pub async fn handle_register(
 ) -> Json<u32> {
     let mut users = state.users.lock().unwrap();
 
-    let id = state.next_user_id.fetch_add(1, std::sync::atomic::Ordering::Release);
+    let id = state.next_user_id.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
     
     users.insert(id, UserData { name: name.clone(), last_ping: time::Instant::now() });
 
